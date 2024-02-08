@@ -1,71 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- icon fa-copy fa-twitter fa-github -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" id="mode-link" href="style.css">
+  <title>Meme Generator</title>
+</head>
+<body>
 
-    <!-- description 150 - 170 characters -->
-    <meta name="description" content="bla bla bla" />
+        <div class="conntainer">
+            <header>
+                <h1>Meme Generator</h1>
+                <a href="https://github.com/BellaMrx" class="header-contact fa fa-github" title="GitHub Profile"><span class="header-span">BellaMrx</span></a>
+                <a href="https://twitter.com/bella_mrx" class="header-contact fa fa-twitter" title="Twitter"><span class="header-span">@bella_mrx</span></a>
+            </header>
 
-    <!-- favicon - wenn dann favicon vorher erstellen-->
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">  
-    <!-- favicon end -->
-
-    <!-- FontAwesome -->
-    <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet">
-    <link href="assets/fontawesome/css/brands.css" rel="stylesheet">
-    <link href="assets/fontawesome/css/solid.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" id="mode-link" href="style.css">
-    <!-- title 50 -70 characters -->
-    <title>Meme Generator</title>
-  </head>
-  <body>
-    <div class="container">
-        <!-- change font-size slider -->
-        <div class="slider-container">
-            <label for="font-size-slider">Adjust font Size</label>
-            <input type="range" id="font-size-slider" min="20" max="80" value="25" />
+            <!-- main meme generator -->
+            <div class="settings">
+                <input type="file" id="imageFileInput">
+                <input type="text" id="topTextInput" placeholder="Enter text">
+    
+                <input type="range" id="font-size-slider" min="10" max="100" value="25" oninput="this.nextElementSibling.value = this.value">
+                <output>25</output>
+    
+                <button id="addButton">Add Text</button>
+                <button id="removeButton">Remove Text</button>
+                <a id="btn-download" download="meme.png">
+                    <button>Save Meme</button>
+                </a>
+            </div>
+                <canvas id="meme"></canvas>
         </div>
 
-        <div class="meme-generator">
-            <label>Select an Image</label>
-            <input type="file" id="imageFileInput">
-          
-            <label>Top Text</label>
-            <input type="text" id="topTextInput">
-          
-            <label>Bottom Text</label>
-            <input type="text" id="bottomTextInput">
-  
 
-            <canvas id="meme">
-
-            </canvas>
-
-
-        </div>
-        <!-- save meme -->
-        <p class="download-button">
-            <a href="#" id="btn-download" download="my-file-name.png">Download Meme</a>
-        </p>
-    </div>
     <script src="script.js"></script>
-
-  </body>
+</body>
 </html>
