@@ -1,0 +1,56 @@
+.meme-generator {
+    margin: 20px auto;
+    width: 400px;
+    font-family: sans-serif;
+  }
+  
+  .meme-generator label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .meme-generator input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  #meme {
+    width: 100%;
+  }
+
+
+  .slider-container {
+    display: flex;
+    padding-top: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .display-text {
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+/* save meme button/link */
+.download-button {
+    text-align: center;
+}
+
+/* draggable text */
+#drag-div {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+  }
+  
+  #mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+  }

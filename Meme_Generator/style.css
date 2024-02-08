@@ -1,56 +1,127 @@
-.meme-generator {
-    margin: 20px auto;
-    width: 400px;
-    font-family: sans-serif;
+@charset "UTF-8";
+/* light.css */
+
+:root {
+    --primary-color-1: #ddd;
+    --primary-color-2: #16A085;
+    --primary-color-3: #555;
+    --primary-color-4: #aaa;
+    --primary-color-5: #ccc;
+    --primary-color-6: #fff;
+    --primary-color-7: #777;
   }
-  
-  .meme-generator label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .meme-generator input {
-    width: 100%;
+
+/* ------------------------------------------
+  GENERAL BASIC SETTINGS  
+    (smartphone > 640px)
+-------------------------------------------*/
+html {
     box-sizing: border-box;
-    margin-bottom: 20px;
-  }
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0 auto;
+    padding: 0;
+}
   
-  #meme {
-    width: 100%;
-  }
-
-
-  .slider-container {
-    display: flex;
-    padding-top: 3rem;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .display-text {
-    text-align: center;
-    padding-top: 2rem;
-  }
-
-/* save meme button/link */
-.download-button {
-    text-align: center;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--primary-color-1);
+    margin: 1em 3rem;
 }
 
-/* draggable text */
-#drag-div {
-    position: absolute;
-    z-index: 9;
-    background-color: #f1f1f1;
-    border: 1px solid #d3d3d3;
-    text-align: center;
+
+.container {
+
+}
+/* ------------------------------------------
+  HEADER
+-------------------------------------------*/
+header {
+  border-bottom: 2px solid var(--primary-color-2);
+  text-align: center;
+}
+header h1 {
+  text-align: center;
+  font-size: 30px;
+  color: var(--primary-color-2);
+  text-shadow: 2px 2px 4px var(--start-nav-text-shadow);
+}
+.header-contact {
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--primary-color-3);
+  padding-bottom: 5px;
+}
+.header-contact:hover {
+  color: var(--primary-color-2);     
+}
+.header-span {
+  margin-right: 10px;
+  padding-left: 5px;
+  font-size: 18px;
+  color: var(--primary-color-3);
+  text-shadow: 0.1em 0.1em var(--start-nav-text-shadow);
+}
+
+/* ------------------------------------------
+  Main
+-------------------------------------------*/
+canvas {
+  display: block;
+  margin: 20px auto;
+  cursor: grab;
+}
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------   
+    Tablet version from 640 pixel                          
+    640px / 16px/em = 40em  
+------------------------------------------------------*/
+@media screen and (min-width: 40em) {
+  body {
+    height: 100vh;
   }
-  
-  #mydivheader {
-    padding: 10px;
-    cursor: move;
-    z-index: 10;
-    background-color: #2196F3;
-    color: #fff;
+  .container {
+    padding: 2px 16px;
   }
+  .header {
+    padding-bottom: 60px;
+  }
+}
+
+/*------------------------------------------------------------------
+  Screens from 1024 pixels                         
+  1024px / 16px/em = 64em	
+------------------------------------------------------------------- */
+@media screen and (min-width: 64em) {
+  .container {
+    padding: 2px 16px;
+  }
+  .header {
+    padding-bottom: 70px;
+  }
+  canvas {
+    border: 1px solid black;
+  }
+}
+
+/*------------------------------------------------------------------- 
+  Large screens (>1600 pixels) 
+  1600px / 16px/em = 100em
+-------------------------------------------------------------------- */
+@media screen and (min-width: 100em) {
+  .container {
+    padding: 2px 16px;
+  }
+  .header {
+    padding-bottom: 70px;
+  }
+}
