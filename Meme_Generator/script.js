@@ -1,10 +1,10 @@
     // Get references to HTML elements
     const imageFileInput = document.getElementById("imageFileInput");
     const canvas = document.getElementById("meme");
-    const topTextInput = document.getElementById("topTextInput");
+    const textInput = document.getElementById("textInput");
     const fontSizeSlider = document.getElementById("font-size-slider");
     const addButton = document.getElementById("addButton");
-    const button = document.getElementById("btn-download");
+    const downloadButton = document.getElementById("btn-download");
     const removeButton = document.getElementById("removeButton");
 
     // Get 2D rendering context for the canvas
@@ -33,7 +33,7 @@
         const aspectRatio = image.width / image.height;
 
         // Set canvas width and height based on the desired width (e.g., 500)
-        const canvasWidth = 700;
+        const canvasWidth = 600;
         const canvasHeight = canvasWidth / aspectRatio;
 
         canvas.width = canvasWidth;
@@ -45,7 +45,7 @@
 
 
     // Event listener for text input change
-    topTextInput.addEventListener("input", drawMeme);
+    textInput.addEventListener("input", drawMeme);
 
     // Event listener for font size slider change
     fontSizeSlider.addEventListener("input", drawMeme);
@@ -62,7 +62,7 @@
     canvas.addEventListener("mouseup", handleMouseUp);
 
     // Event listener for save button click
-    button.addEventListener("click", saveMeme);
+    downloadButton.addEventListener("click", saveMeme);
 
     // Function to draw the meme on the canvas
     function drawMeme() {
@@ -102,7 +102,7 @@
 
     // Function to add a text input to the meme
     function addText() {
-      const text = topTextInput.value;
+      const text = textInput.value;
       const fontSize = fontSizeSlider.value;
       const x = canvas.width / 2; // Initial x position at the center
       const y = canvas.height / 2; // Initial y position at the center
@@ -113,7 +113,6 @@
       // Redraw the meme with the new text input
       drawMeme();
     }
-
 
     // Function to remove the selected text input
     function removeText() {
@@ -186,5 +185,5 @@
     // Function to save the meme as an image
     function saveMeme() {
       const dataURL = canvas.toDataURL("image/png");
-      button.href = dataURL;
+      downloadButton.href = dataURL;
     }

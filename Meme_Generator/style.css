@@ -30,10 +30,6 @@ body {
     margin: 1em 3rem;
 }
 
-
-.container {
-
-}
 /* ------------------------------------------
   HEADER
 -------------------------------------------*/
@@ -67,19 +63,96 @@ header h1 {
 /* ------------------------------------------
   Main
 -------------------------------------------*/
-canvas {
-  display: block;
-  margin: 20px auto;
-  cursor: grab;
+.settings label, output {
+  display: inline-block;
+  /*width: 100px;*/
+  text-align: right;
+  color: var(--primary-color-3);
+  font-size: small;
+  margin: 3px 10px;
+  padding: 3px 10px;
+}
+/* upload */
+.settings input[type=file] {
+  color: var(--primary-color-3);
+  background-color: var(--primary-color-1);
+  text-align: left;
+  width: 900px;
+  padding: 5px 10px;
+  margin: 3px;
+  border-radius: 2px;
+}
+.settings input[type=file]::file-selector-button {
+  background-color: var(--primary-color-3);
+  color: var(--primary-color-1);
+  border-radius: 2px;
+  border: 1px solid var(--primary-color-4);
+  padding: 3px 5px;
+  box-shadow: 1px 1px var(--primary-color-4);
+  transition: 1s;
+}
+.settings input[type=file]::file-selector-button:hover {
+  background-color: var(--primary-color-2);
+  color: var(--primary-color-6);
+  box-shadow: none;
+}
+/* textbox */
+.settings input[type=text] {
+  background-color: var(--primary-color-6);
+  color: var(--primary-color-3);
+  text-align: left;
+  font-size: medium;
+  border-radius: 2px;
+  border: 1px solid var(--primary-color-4);
+  padding: 3px 10px;
+  margin: 8px;
+  width: 90%;
+}
+/* font size */
+.settings input[type=range] {
+  width: 85%;
+  text-align: left;
+  padding: 3px 10px;
+  margin: 3px;
+  accent-color: var(--primary-color-2);
+}
+.settings button {
+  color: var(--primary-color-1);
+  background-color: var(--primary-color-3);
+  text-align: center;
+  border: 1px solid var(--primary-color-4);
+  width: 50%;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 2px;
+  box-shadow: 2px 2px var(--primary-color-4);
+  transition: 1s; 
+}
+.settings button:hover {
+  background-color: var(--primary-color-2);
+  color: var(--primary-color-6);
+  box-shadow: none;
+}
+.settings button:focus {
+  box-shadow: none;
+}
+.settings a {
+  text-align: center;
+  width: 100%;
+}
+.setting-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid var(--primary-color-2);
 }
 
-
-
-
-
-
-
-
+canvas {
+  display: block;
+  margin: 10px auto;
+  cursor: grab;
+}
 
 /*-----------------------------------------------------   
     Tablet version from 640 pixel                          
@@ -95,6 +168,9 @@ canvas {
   .header {
     padding-bottom: 60px;
   }
+  .settings label, output {
+    font-size: medium;
+  }
 }
 
 /*------------------------------------------------------------------
@@ -107,6 +183,47 @@ canvas {
   }
   .header {
     padding-bottom: 70px;
+  }
+  .settings-large-display {
+    display: block; 
+    width: 100%;
+    border-bottom: 1px solid var(--primary-color-2);
+  }
+  .input {
+    display: inline-block;
+    width: 33%;
+    border-bottom: none;
+  }
+  #addButton, #removeButton {
+    width: 30%;
+  }
+  #btn-download {
+    width: 50%;
+  }
+  .settings .input-text {
+    border-right: 1px solid var(--primary-color-2);
+    border-left: 1px solid var(--primary-color-2);
+  }
+  .settings input[type=file] {
+    text-align: left;
+    width: 700px;
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 2px;
+  }
+  .settings input[type=text] {
+    text-align: left;
+    font-size: medium;
+    border-radius: 2px;
+    padding: 3px 10px;
+    margin: 8px;
+    width: 60%; 
+  }
+  .settings input[type=range] {
+    width: 38%;
+    text-align: left;
+    padding: 3px 10px;
+    margin: 3px;
   }
   canvas {
     border: 1px solid black;

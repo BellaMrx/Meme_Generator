@@ -9,32 +9,43 @@
   <title>Meme Generator</title>
 </head>
 <body>
-
-        <div class="conntainer">
-            <header>
-                <h1>Meme Generator_Ver_2</h1>
-                <a href="https://github.com/BellaMrx" class="header-contact fa fa-github" title="GitHub Profile"><span class="header-span">BellaMrx</span></a>
-                <a href="https://twitter.com/bella_mrx" class="header-contact fa fa-twitter" title="Twitter"><span class="header-span">@bella_mrx</span></a>
-            </header>
-
-            <!-- main meme generator -->
-            <div class="settings">
-                <input type="file" id="imageFileInput">
-                <input type="text" id="topTextInput" placeholder="Enter text">
-    
-                <input type="range" id="font-size-slider" min="10" max="100" value="25" oninput="this.nextElementSibling.value = this.value">
-                <output>25</output>
-    
-                <button id="addButton">Add Text</button>
-                <button id="removeButton">Remove Text</button>
-                <a id="btn-download" download="meme.png">
-                    <button>Save Meme</button>
-                </a>
+    <div class="conntainer">
+        <header>
+            <h1>Meme Generator</h1>
+            <a href="https://github.com/BellaMrx" class="header-contact fa fa-github" title="GitHub Profile"><span class="header-span">BellaMrx</span></a>
+            <a href="https://twitter.com/bella_mrx" class="header-contact fa fa-twitter" title="Twitter"><span class="header-span">@bella_mrx</span></a>
+        </header>
+        <!-- main meme generator -->
+        <div class="settings">
+            <div class="settings-large-display">
+                <div class="setting-items input">
+                    <!--    <label for="Upload Image">Upload Image:</label>     -->
+                    <input type="file" id="imageFileInput">
+                </div>
+                <div class="setting-items input input-text">
+                    <label for="Text">Textbox:</label>
+                    <input type="text" id="textInput" placeholder="Enter text here...">
+                </div>
+                <div class="setting-items input">
+                    <label for="Font-Size">Font size:</label>
+                    <input type="range" id="font-size-slider" min="10" max="100" value="25" oninput="this.nextElementSibling.value = this.value">
+                    <output>25</output>
+                </div>
             </div>
-                <canvas id="meme"></canvas>
+            <div class="settings-large-display">
+                <div class="setting-items button">
+                    <button id="addButton">Add Text</button>
+                    <button id="removeButton">Remove Text</button>
+                </div>
+                <div class="setting-items button">
+                    <a id="btn-download" download="meme.png">
+                        <button>Save Meme</button>
+                    </a>
+                </div>
+            </div>
         </div>
-
-
+        <canvas id="meme"></canvas>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
